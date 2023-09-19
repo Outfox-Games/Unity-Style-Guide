@@ -23,20 +23,12 @@ This article contains ideas for setting up a projects structure and a naming con
 <a name="style"></a>
 ### 1.1 Style
 
-#### If your project already has a style guide, you should follow it.
-If you are working on a project or with a team that has a pre-existing style guide, it should be respected.  Any inconsistency between an existing style guide and this guide should defer to the existing.
-
-Style guides should be living documents however and you should propose style guide changes to an existing style guide as well as this guide if you feel the change benefits all usages.
-
-> ##### *Arguments over style are pointless. There should be a style guide, and you should follow it.*
-> [_Rebecca Murphey_](https://rmurphey.com)
-
 #### All structure, assets, and code in any project should look like a single person created it, no matter how many people contributed.
 Moving from one project to another should not cause a re-learning of style and structure. Conforming to a style guide removes unneeded guesswork and ambiguities.
 
 It also allows for more productive creation and maintenance as one does not need to think about style, simply follow instructions. This style guide is written with best practices in mind, meaning that by following this style guide you will also minimize hard to track issues.
 
-#### Friends do not let friends have bad style.
+#### Keep things consistent
 If you see someone working either against a style guide or no style guide, try to correct them.
 
 When working within a team or discussing within a community, it is far easier to help and to ask for help when people are consistent. Nobody likes to help untangle someone's spaghetti code or deal with assets with names they can't understand.
@@ -86,70 +78,76 @@ In this style, we will be using a structure that relies more on filtering and se
 > IMPORTANT: Development Assets (work in progress or testing assets contained in `_Dev`) should always be prefixed with a `_` to make it easy when configuring things in the inspector
 <pre>
 Assets
+    <a name="#structure-_1Scenes">_1Scenes</a>
+	_Test (WIP Scenes)
+    <a name="#structure-_2Prefabs">_2Prefabs</a>
+	Categorical Structure for each folder
+	Prefabs outside of these folders are frequently used prefabs
     <a name="#structure-developers">_Dev</a>(Use a `_`to keep this folder at the top)
         DeveloperName
             (Work in progress assets)
-    <a name="structure-top-level">ProjectName</a>
-	    Characters
-            	Anakin
-            FX
-	    	Particles
-                Vehicles
-                    Abilities
-                        IonCannon
-                            (Particle Systems, Textures)
-                Weapons
-            Gameplay
-                Characters
-                Equipment
-                Input
-		Triggers
-		Quests
-		Scene
-                Vehicles
-                    Abilities
-                    Air
-                        TieFighter
-                            (Models, Textures, Materials, Prefabs)
-            <a name="#structure-levels">_Levels</a>
-                Frontend
-                Act1
-                    Level1
-            Lighting
-                HDRI
-                Lut
-                Textures
-            MaterialLibrary
-            	Debug
-            	Shaders
-            Objects
-                Architecture (Single use big objects)
-                    DeathStar
-                Props (Repeating objects to fill a level)
-                    ObjectSets
-                        DeathStar
-            Scripts
-                AI
-                Gameplay
-		    Triggers
-		    Quests
-                    Input
-                Tools
-            Sound
-                Characters
-                Vehicles
-                    TieFighter
-                        Abilities
-                            Afterburners
-                Weapons
-            UI
-                Art
-                    Buttons
-                Resources
-                    Fonts
-    ExpansionPack (DLC)
-    Plugins
-    ThirdPartySDK  
+    <a name="structure-top-level">_3Project</a>
+	    _Scripts
+            	Categorical Folder Structure
+            _Sprites
+		_Placeholder: Temp use
+		_Test: Testing purposes
+		Categorical Folder Structure
+            Animations
+		Categorical Folder Structure
+            Audio
+		Mixers
+		Originals
+		    Categorical Folder Strucutre
+		Scripts: Database
+	    Cutscenes
+	        Categorical Folder Structure
+	    Live2D: All of the Live2D prefabs and assets
+	        Categorical Folder Structure
+	    Materials
+	    Party Games: Each Folder has one minigame
+	        _GlobalTaskScripts: Linking minigames to main game system
+	        Categorical Folder Structure
+	            Animations
+	            Scripts
+	            Sprites
+	            Prefabs
+	    VFX
+	       _URP Settings: Lighting settings
+	       Categorical Folder Structure
+    _4ScriptableObjects
+	_Custom: Most used setting changes: Bookmark this
+	_EventsAndCanvas: Scriptable Object Events
+	Abilities
+	General
+	Particles
+	Player
+	Props
+    _5Playfab: Playfab networking specific
+    Live2D: plug-in, kept in root due to errors that occurred
+    LobbyAndWorlds: Fishnet multiplayer scene
+    Plugins: All other plugins
+	Animancer: https://kybernetik.com.au/animancer/docs/
+	Codeandweb.com: TexturePacker: https://www.codeandweb.com/texturepacker/unity
+	Steamworks: Steam integration: https://partner.steamgames.com/doc/home
+	Dissonance: VoiceChat integration: https://placeholder-software.co.uk/dissonance/docs/index.html
+	DissonanceWebGL: webgl integration (temporary here if need to export to webGL)
+	FastScriptReload: https://immersivevrtools.com/projects/fast-script-reload/documentation
+	Fishnet: Multiplayer networking: https://fish-networking.gitbook.io/docs/
+	Fullscreen: Easy fullscreen hotkeys: F9 for any focused view; F10 for game view; F11 for scene view; F12 for the main view
+	FunkyCode: Lighting2D: https://docs.google.com/document/d/1w1KgqK-kD9XzriBMhlz3ETrJs7rkNBWKXr5gK9gmDXQ/edit
+	Heatmap2D-master: testing heat map
+	Heatmap recording: recording heat map
+	I2: Localization: http://inter-illusion.com/assets/I2LocalizationManual/I2LocalizationManual.html
+	PlayFabEditorExtensions: PlayFab
+	PlayfabSdk: Playfab
+	PlayFlowCloud: Quick server testing https://docs.playflowcloud.com/
+	Sirenix: Odin Inspector: https://odininspector.com/documentation
+        Steamworks.Net: Steamworks
+	TextMeshPro: Better text in Unity
+	UpdateManager: Improved Update method system
+    Resources:
+	
 </pre>
 
 
